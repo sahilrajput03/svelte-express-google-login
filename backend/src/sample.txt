@@ -1,0 +1,8 @@
+console.log('req.query?', req.query)
+{
+    code: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    scope: 'email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+    authuser: '1',
+    hd: 'lucify.in',
+    prompt: 'consent'
+}
