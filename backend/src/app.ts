@@ -22,7 +22,7 @@ app.get('/login/google/callback', async (req, res) => {
   try {
     const { tokens } = await oAuth2Client?.getToken(query.code)!;
     // console.log("tokens:", tokens) // { access_token, expiry_date, refresh_token, ...more}
-    oAuth2Client?.setCredentials(tokens);
+    oAuth2Client?.setCredentials(tokens); // (fyi: setting credentials twice wipes out the earlier one and only keeps the latest set credential)
 
     const user = await getGoogleUserDetails(); // check this function defintion to see sample output
     // TODO: Save this information to database and then we never need to access information for same user ever again.   
