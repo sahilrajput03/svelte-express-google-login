@@ -1,22 +1,31 @@
 import express from 'express'
+import cookieParser from 'cookie-parser'
 import type { Application, Request, Response } from 'express'
 import 'dotenv/config'
-import { getGoogleUserDetails, initOAuth2Client, oAuth2Client } from './initGoogleOauth'
+import { authorizeUrl, getGoogleUserDetails, oAuth2Client } from './google-oauth'
 import jwt from 'jsonwebtoken';
-
-initOAuth2Client()
 
 const app: Application = express()
 
 app.use(express.json())
+app.use(cookieParser()); // Use cookie-parser middleware
 
 const port = 8080
 
 app.get('/', async (req: Request, res: Response) => {
-  res.send('Hello from express + typescript')
+  res.send('Hello from express + typescript. <br /> <a href="/login/google">/login/google</a>')
+})
+
+// TODO: Complete this route.
+app.get('/login/google', async (req, res) => {
+  // res.cookie('debug', 'google_login_attempt', { maxAge: 15 * 60 * 1000 }); // (15mins) "maxAge": Lifetime of the cookie in milliseconds
+  res.redirect(authorizeUrl)
 })
 
 app.get('/login/google/callback', async (req, res) => {
+  // console.log('cookies: debug?', req.cookies.debug) // "google_login_attempt"
+  // res.clearCookie('debug'); // clear cookie
+
   const { query }: any = req // For sample output of req.query please check sample.txt file in this directory.
 
   try {
