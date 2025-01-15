@@ -6,6 +6,12 @@ An example to show login with google with svelte and expressjs.
 
 - My earlier Lucia's example repo of google login with sveltekit only (without express) - https://github.com/sahilrajput03/lucia-example-sveltekit-google-oauth
 
+# Setup in google cloud console
+
+Please add this callback url to your list of callback urls:
+
+`http://localhost:8080/login/merchant/google/callback`
+
 # Design Decisions
 
 ## Backend
