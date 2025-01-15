@@ -13,16 +13,16 @@ app.use(cookieParser()); // Use cookie-parser middleware
 const port = 8080
 
 app.get('/', async (req: Request, res: Response) => {
-  res.send('Hello from express + typescript. <br /> <a href="/login/google/merchant">/login/google/merchant</a>')
+  res.send('Hello from express + typescript. <br /> <a href="/login/google">/login/google</a>')
 })
 
 // TODO: Complete this route.
-app.get('/login/google/merchant', async (req, res) => {
+app.get('/login/google', async (req, res) => {
   // res.cookie('debug', 'google_login_attempt', { maxAge: 15 * 60 * 1000 }); // (15mins) "maxAge": Lifetime of the cookie in milliseconds
   res.redirect(authorizeUrl)
 })
 
-app.get('/login/merchant/google/callback', async (req, res) => {
+app.get('/login/google/callback', async (req, res) => {
   // console.log('cookies: debug?', req.cookies.debug) // "google_login_attempt"
   // res.clearCookie('debug'); // clear cookie
 

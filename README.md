@@ -10,8 +10,8 @@ An example to show login with google with svelte and expressjs.
 
 Please add these callback url to your list of callback urls:
 
-- `http://localhost:8080/login/merchant/google/callback`
-- `https://qr.monktechnoworld.com/login/merchant/google/callback`
+- `http://localhost:8080/login/google/callback`
+- `https://qr.monktechnoworld.com/login/google/callback`
 
 # Design Decisions
 
@@ -31,4 +31,4 @@ In backend when we need multiple types of users to signup I make use of multiple
 - 'http://localhost:8080/login/google/callback'
 - 'http://localhost:8080/login/google/callback'
 
-we use multiple google callback urls for e.g., `userType='customer'` and `userType='merchant'`.
+Also, if needed you can use multiple google callback urls for e.g., "http://localhost:8080/login/merchant/google/callback", "http://localhost:8080/login/users/google/callback" if we need to handle logins of each type of users separately in different route.
