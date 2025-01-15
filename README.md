@@ -8,9 +8,10 @@ An example to show login with google with svelte and expressjs.
 
 # Setup in google cloud console
 
-Please add this callback url to your list of callback urls:
+Please add these callback url to your list of callback urls:
 
-`http://localhost:8080/login/merchant/google/callback`
+- `http://localhost:8080/login/merchant/google/callback`
+- `https://qr.monktechnoworld.com/login/merchant/google/callback`
 
 # Design Decisions
 
