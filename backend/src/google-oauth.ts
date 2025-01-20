@@ -16,8 +16,6 @@ if (requiredEnvValues.length !== 0) {
   console.log('ERROR: Please provide these env values:', requiredEnvValues.join(', '))
 }
 
-// TODO: handle undefined for above values.
-
 // Google docs on using this library: https://developers.google.com/identity/protocols/oauth2
 // Docs: https://www.npmjs.com/package/google-auth-library
 // export let oAuth2Client = null as null | OAuth2Client;

@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 
 const app: Application = express()
 
-app.use(express.json())
+app.use(express.json()) // To accept json data
 app.use(cookieParser()); // Use cookie-parser middleware
 
 const port = 8080
