@@ -34,7 +34,18 @@ app.get('/login/google/callback', async (req, res) => {
     oAuth2Client?.setCredentials(tokens); // (fyi: setting credentials twice wipes out the earlier one and only keeps the latest set credential)
 
     const user = await getGoogleUserDetails(); // check this function defintion to see sample output
-    // TODO: Save this information to database and then we never need to access information for same user ever again.   
+    // TODO: Save this information to database and then we never need to access information for same user ever again.  
+    // console.log("user=", user)
+    // o/p: -
+    // user= {
+    //   id: '104502793163562575808',
+    //   email: 'piyushprateek231996@gmail.com',
+    //   verified_email: true,
+    //   name: 'piyush prateek',
+    //   given_name: 'piyush',
+    //   family_name: 'prateek',
+    //   picture: 'https://lh3.googleusercontent.com/a/ACg8ocIYEqBoVKHtFI0UxyuOJI7VdPxCFZdImGj3dgXh0XNS6C6GcZKj=s96-c'
+    // }
 
     // Clear Credentials from oauth2client instance because we no longer need it
     await oAuth2Client?.setCredentials({});
