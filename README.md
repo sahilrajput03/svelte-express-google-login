@@ -26,9 +26,11 @@ Do not use cookies because it makes thing tougher to move:
 
 #### Google Callback URL
 
-In backend when we need multiple types of users to signup I make use of multiple routes e.g.,
+1. In backend when we need multiple types of users to signup I make use of multiple routes e.g.,
 
-- 'http://localhost:8080/login/google/callback'
+- 'http://localhost:8080/login/merchant/google/callback'
 - 'http://localhost:8080/login/google/callback'
 
 Also, if needed you can use multiple google callback urls for e.g., "http://localhost:8080/login/merchant/google/callback", "http://localhost:8080/login/users/google/callback" if we need to handle logins of each type of users separately in different route.
+
+2. ⛔️ NOTE: You can not use a GOOGLE_REDIRECT_URI like `'http://192.168.0.209:8080/api/v1/login/google/callback'` because if you try to add this to GCP --- you get error that redirect url must be a top level domain or localhost only.
